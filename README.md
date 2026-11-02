@@ -1,61 +1,115 @@
-FaceFusion
-==========
+# FaceFusion Liberated
 
-> Industry leading face manipulation platform.
+> A modified, community-maintained fork of FaceFusion with a simplified Windows launch experience.
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/facefusion/facefusion/ci.yml.svg?branch=master)](https://github.com/facefusion/facefusion/actions?query=workflow:ci)
-[![Coverage Status](https://img.shields.io/coveralls/facefusion/facefusion.svg)](https://coveralls.io/r/facefusion/facefusion)
+[![Based on FaceFusion](https://img.shields.io/badge/Based%20on-FaceFusion-blue)](https://github.com/facefusion/facefusion)
+![Platform](https://img.shields.io/badge/platform-Windows-blue)
 ![License](https://img.shields.io/badge/license-OpenRAIL--AS-green)
 
+---
 
-Preview
--------
+## About
 
-![Preview](https://raw.githubusercontent.com/facefusion/facefusion/master/.github/preview.png?sanitize=true)
+**FaceFusion Liberated** is a modified fork of [FaceFusion](https://github.com/facefusion/facefusion), an industry-leading face manipulation platform.
 
+This fork aims to provide a more convenient Windows experience while introducing selected modifications to the original source code.
 
-Installation
-------------
+The goal is to make launching and maintaining FaceFusion easier without losing the functionality of the original project.
 
-Be aware, the [installation](https://docs.facefusion.io/installation) needs technical skills and is not recommended for beginners. In case you are not comfortable using a terminal, our [Windows Installer](http://windows-installer.facefusion.io) and [macOS Installer](http://macos-installer.facefusion.io) get you started.
+## Modifications
 
+This fork currently includes the following changes:
 
-Usage
------
+- **Portable Windows Launcher:** Launch FaceFusion using a batch file located in the project directory.
+- **Automatic Environment Detection:** The launcher locates the bundled Python environment relative to the project folder.
+- **CUDA DLL Preloading:** Attempts to load NVIDIA libraries required by ONNX Runtime.
+- **Content Analysis Modification:** Changes the original content analyser behavior.
 
-Run the command:
+More modifications may be introduced over time.
 
+## Preview
+
+![FaceFusion Preview](https://raw.githubusercontent.com/facefusion/facefusion/master/.github/preview.png)
+
+## Installation
+
+### Requirements
+
+- Windows 10 or Windows 11
+- NVIDIA GPU for CUDA acceleration (optional)
+- A compatible Python environment
+- Required FaceFusion dependencies and models
+
+### Launching on Windows
+
+If you have the required environment installed in the project directory:
+
+1. Download or clone this repository.
+2. Make sure the required Python environment is available under `miniconda3\envs\facefusion`.
+3. Run `Launch_FaceFusion.bat`.
+4. Wait for FaceFusion to start and open in your browser.
+
+**Note:** The launcher is designed to work relative to the project directory. The bundled Python environment is not included in this Git repository, so you must prepare the dependencies separately.
+
+### Manual Launch
+
+You can also launch FaceFusion using:
+
+```powershell
+python facefusion.py run --open-browser
 ```
+
+Refer to the [official installation documentation](https://docs.facefusion.io/installation) for dependency setup.
+
+## Usage
+
+FaceFusion supports several commands:
+
+```powershell
 python facefusion.py [commands] [options]
-
-options:
-  -h, --help                                      show this help message and exit
-  -v, --version                                   show program's version number and exit
-
-commands:
-    run                                           run the program
-    headless-run                                  run the program in headless mode
-    batch-run                                     run the program in batch mode
-    force-download                                force automate downloads and exit
-    benchmark                                     benchmark the program
-    job-list                                      list jobs by status
-    job-create                                    create a drafted job
-    job-submit                                    submit a drafted job to become a queued job
-    job-submit-all                                submit all drafted jobs to become a queued jobs
-    job-delete                                    delete a drafted, queued, failed or completed job
-    job-delete-all                                delete all drafted, queued, failed and completed jobs
-    job-add-step                                  add a step to a drafted job
-    job-remix-step                                remix a previous step from a drafted job
-    job-insert-step                               insert a step to a drafted job
-    job-remove-step                               remove a step from a drafted job
-    job-run                                       run a queued job
-    job-run-all                                   run all queued jobs
-    job-retry                                     retry a failed job
-    job-retry-all                                 retry all failed jobs
 ```
 
+Available commands include:
 
-Documentation
--------------
+- `run` – Run the application.
+- `headless-run` – Run without the graphical interface.
+- `batch-run` – Process multiple files.
+- `benchmark` – Run performance benchmarks.
+- `force-download` – Download required resources.
+- `job-list` – List existing jobs.
+- `job-create` – Create a new job.
+- `job-submit` – Submit a job for processing.
 
-Read the [documentation](https://docs.facefusion.io) for a deep dive.
+For the complete command list, run:
+
+```powershell
+python facefusion.py --help
+```
+
+## Documentation
+
+For detailed instructions and information about FaceFusion, visit:
+
+- [Official FaceFusion Documentation](https://docs.facefusion.io)
+- [Original FaceFusion Repository](https://github.com/facefusion/facefusion)
+
+## Credits
+
+FaceFusion Liberated is based on the original [FaceFusion](https://github.com/facefusion/facefusion) project.
+
+Original author and copyright holder: **Henry Ruhs**
+
+All original copyright notices, attributions, and license conditions must be preserved.
+
+This repository contains modifications made for FaceFusion Liberated. These modifications do not imply ownership of the original FaceFusion project.
+
+## License
+
+This project retains the original FaceFusion **OpenRAIL-AS** licensing terms.
+
+Please refer to the included `LICENSE` file for the complete license text and applicable conditions.
+
+---
+
+**FaceFusion Liberated**  
+A modified fork of FaceFusion.

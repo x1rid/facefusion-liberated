@@ -5,3 +5,17 @@ __pycache__
 .idea
 .jobs
 .vscode
+
+# Local Python environment
+miniconda3/
+
+# Local debugging files
+check-hash.py
+startup-debug.py
+startup-log.txt
+
+# Local backups
+facefusion/backup/
+
+# Temporary files
+*.log
